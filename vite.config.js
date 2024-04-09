@@ -3,16 +3,13 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
   server: {
     port: 3000,
-    // server:{
-    //   "/api":{
-    //     target: "http://localhost:5000",
-    //     changeOrigin: true,
-    //     secure: false,  
-    //     rewrite: (path) => path.replace(/^\/api/, "")
-    //   }
-    // }
+    server:{
+      "/api":{
+        target: "https://social-media-backend-o1q8.onrender.com",
+      }
+    }
   },
+  plugins: [react()],
 });

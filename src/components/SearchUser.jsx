@@ -54,8 +54,8 @@ function SearchUser() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <InputRightElement onClick={handleSearch} cursor={"pointer"}>
-            <IoSendSharp isLoaing={loading} />
+          <InputRightElement isLoading={loading} onClick={handleSearch} cursor={"pointer"}>
+            <IoSendSharp  />
           </InputRightElement>
         </InputGroup>
       </form>

@@ -16,6 +16,8 @@ import userAtom from "../atoms/userAtom";
 import usePreviewImg from "../hooks/usePreviewImg";
 import useShowToast from "../hooks/useShowToast";
 import { useNavigate } from "react-router-dom";
+import {URL} from '../constants.js'
+
 
 export default function UpdateProfilePage() {
   const [user, setUser] = useRecoilState(userAtom);
@@ -38,7 +40,7 @@ export default function UpdateProfilePage() {
     if(updating) return;
     setUpdating(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/users/update/${user._id}`, {
+      const res = await fetch(`${URL}/api/users/update/${user._id}`, {
         credentials:"include",
         method: "PUT",
         headers: {
